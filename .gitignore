@@ -7,3 +7,6 @@ backend/.env.local
 .DS_Store
 Thumbs.db
 desktop.ini
+.m2repo/
+*.log
+target/
