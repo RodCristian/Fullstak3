@@ -1,4 +1,4 @@
-import type { AppointmentResponse } from '../types'
+﻿import type { AppointmentResponse } from '../types'
 import { formatDateTime } from '../utils'
 import { StatusBadge } from './StatusBadge'
 
@@ -31,7 +31,7 @@ export function DashboardTable({ title, description, appointments }: DashboardTa
                 <StatusBadge status={appointment.status} />
                 <h4>{appointment.patientName}</h4>
                 <p>
-                  {appointment.doctorName} · {appointment.specialty}
+                  {appointment.doctorName} - {appointment.specialty}
                 </p>
               </div>
               <div>
@@ -49,3 +49,4 @@ export function DashboardTable({ title, description, appointments }: DashboardTa
     </section>
   )
 }
+

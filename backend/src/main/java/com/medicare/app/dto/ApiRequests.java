@@ -54,4 +54,18 @@ public final class ApiRequests {
             @Size(max = 1600, message = "El plan de seguimiento es demasiado largo")
             String followUpPlan) {
     }
+
+    public record CalendarDebugTestRequest(
+            @Size(max = 160, message = "El resumen es demasiado largo")
+            String summary,
+            @Size(max = 1000, message = "La descripcion es demasiado larga")
+            String description,
+            @Future(message = "La fecha de prueba debe estar en el futuro")
+            LocalDateTime scheduledAt,
+            @Min(value = 15, message = "La duracion minima es de 15 minutos")
+            @Max(value = 180, message = "La duracion maxima es de 180 minutos")
+            Integer durationMinutes,
+            @Email(message = "Debes ingresar un correo valido para el invitado")
+            String attendeeEmail) {
+    }
 }

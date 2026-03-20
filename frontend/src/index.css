@@ -1,13 +1,22 @@
-:root {
+﻿:root {
   font-family:
-    "Plus Jakarta Sans",
-    "Segoe UI",
+    'Plus Jakarta Sans',
+    'Segoe UI',
     sans-serif;
-  color-scheme: dark;
-  --text-primary: #eef6ff;
-  --text-secondary: #bfd0e8;
-  --text-muted: #8fa6c4;
-  --shadow-soft: 0 25px 80px rgba(3, 8, 18, 0.35);
+  color-scheme: light;
+  --bg-base: #f3fbf8;
+  --bg-surface: rgba(255, 255, 255, 0.86);
+  --bg-surface-strong: #ffffff;
+  --bg-soft: #eef8f5;
+  --border-soft: rgba(29, 96, 82, 0.12);
+  --border-strong: rgba(29, 96, 82, 0.22);
+  --text-primary: #153730;
+  --text-secondary: #5b776f;
+  --text-muted: #7f9b94;
+  --accent: #1d9d8b;
+  --accent-dark: #136e61;
+  --accent-soft: #dff7f1;
+  --shadow-soft: 0 24px 64px rgba(21, 55, 48, 0.12);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -25,7 +34,8 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #071321;
+  background: var(--bg-base);
+  color: var(--text-primary);
 }
 
 body,
@@ -48,3 +58,4 @@ button {
 #root {
   min-height: 100vh;
 }
+

@@ -28,22 +28,22 @@ public class NotificationService {
     private final JavaMailSender mailSender;
     private final NotificationLogRepository notificationLogRepository;
 
-    @Value("${app.notifications.mail-enabled:false}")
+    @Value("${app.notifications.mail-enabled:${app.mail.enabled:${APP_MAIL_ENABLED:false}}}")
     private boolean mailEnabled;
 
-    @Value("${spring.mail.host:}")
+    @Value("${spring.mail.host:${MAIL_HOST:}}")
     private String mailHost;
 
-    @Value("${spring.mail.username:}")
+    @Value("${spring.mail.username:${MAIL_USERNAME:}}")
     private String mailUsername;
 
-    @Value("${spring.mail.password:}")
+    @Value("${spring.mail.password:${MAIL_PASSWORD:}}")
     private String mailPassword;
 
-    @Value("${app.notifications.from:no-reply@navycare.local}")
+    @Value("${app.notifications.from:${app.mail.from:${APP_MAIL_FROM:no-reply@navycare.local}}}")
     private String fromAddress;
 
-    @Value("${app.notifications.admin-email:admin@navycare.local}")
+    @Value("${app.notifications.admin-email:${app.admin.email:${APP_ADMIN_EMAIL:admin@navycare.local}}}")
     private String adminEmail;
 
     public NotificationService(JavaMailSender mailSender, NotificationLogRepository notificationLogRepository) {
@@ -143,22 +143,19 @@ public class NotificationService {
 
     public boolean isMailDeliveryConfigured() {
         return mailEnabled
-                && mailHost != null && !mailHost.isBlank()
-                && mailUsername != null && !mailUsername.isBlank()
-                && mailPassword != null && !mailPassword.isBlank()
-                && fromAddress != null && !fromAddress.isBlank();
+                && hasText(mailHost)
+                && hasText(mailUsername)
+                && hasText(mailPassword)
+                && hasText(fromAddress);
     }
 
     public String getMailStatusMessage() {
         if (!mailEnabled) {
-            return "Correo deshabilitado. Activa APP_MAIL_ENABLED=true para envio real.";
+            return "Correo deshabilitado. Activa la configuracion de mail para envio real.";
         }
 
-        if (mailHost == null || mailHost.isBlank()
-                || mailUsername == null || mailUsername.isBlank()
-                || mailPassword == null || mailPassword.isBlank()
-                || fromAddress == null || fromAddress.isBlank()) {
-            return "SMTP incompleto. Configura MAIL_HOST, MAIL_USERNAME, MAIL_PASSWORD y APP_MAIL_FROM.";
+        if (!hasText(mailHost) || !hasText(mailUsername) || !hasText(mailPassword) || !hasText(fromAddress)) {
+            return "SMTP incompleto. Configura host, username, password y remitente para envio real.";
         }
 
         return "SMTP listo para enviar correos reales.";
@@ -177,14 +174,13 @@ public class NotificationService {
         logEntry.setSubject(subject);
 
         if (!mailEnabled) {
-            log.info("Correo omitido porque APP_MAIL_ENABLED=false. Destino: {}, Asunto: {}", to, subject);
+            log.info("Correo omitido porque la integracion de mail esta deshabilitada. Destino: {}, Asunto: {}", to, subject);
             logEntry.setStatus(NotificationStatus.SKIPPED);
             logEntry.setDetail(getMailStatusMessage());
             return notificationLogRepository.save(logEntry);
         }
 
-        if (mailHost == null || mailHost.isBlank() || mailUsername == null || mailUsername.isBlank()
-                || mailPassword == null || mailPassword.isBlank() || fromAddress == null || fromAddress.isBlank()) {
+        if (!hasText(mailHost) || !hasText(mailUsername) || !hasText(mailPassword) || !hasText(fromAddress)) {
             logEntry.setStatus(NotificationStatus.SKIPPED);
             logEntry.setDetail(getMailStatusMessage());
             return notificationLogRepository.save(logEntry);
@@ -207,5 +203,9 @@ public class NotificationService {
         }
 
         return notificationLogRepository.save(logEntry);
+    }
+
+    private boolean hasText(String value) {
+        return value != null && !value.isBlank();
     }
 }

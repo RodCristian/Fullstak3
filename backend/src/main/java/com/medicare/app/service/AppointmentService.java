@@ -34,12 +34,16 @@ import com.medicare.app.repository.TicketRepository;
 import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class AppointmentService {
+
+    private static final Logger log = LoggerFactory.getLogger(AppointmentService.class);
 
     private final AppointmentRepository appointmentRepository;
     private final DoctorRepository doctorRepository;
@@ -116,7 +120,21 @@ public class AppointmentService {
                 buildTicket(appointment, TicketRecipient.ADMIN),
                 buildTicket(appointment, TicketRecipient.DOCTOR)));
 
+        log.info(
+                "Reservation flow -> invoking Google Calendar for appointmentId={}, doctor={}, patientEmail={}, scheduledAt={}",
+                appointment.getId(),
+                appointment.getDoctor().getFullName(),
+                appointment.getPatient().getEmail(),
+                appointment.getScheduledAt());
         CalendarEventResult eventResult = googleCalendarService.createEvent(appointment);
+        log.info(
+                "Reservation flow -> Google Calendar result for appointmentId={}: created={}, calendarId={}, eventId={}, htmlLink={}, message={}",
+                appointment.getId(),
+                eventResult.created(),
+                eventResult.calendarId(),
+                eventResult.eventId(),
+                eventResult.htmlLink(),
+                eventResult.message());
         if (eventResult.created()) {
             appointment.setCalendarEventId(eventResult.eventId());
             appointment.setCalendarHtmlLink(eventResult.htmlLink());
@@ -365,3 +383,5 @@ public class AppointmentService {
                 notificationLog.getCreatedAt());
     }
 }
+
+

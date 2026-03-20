@@ -61,10 +61,24 @@ export function toDateTimeLocal(date: Date) {
   return `${year}-${month}-${day}T${hours}:${minutes}`
 }
 
+export function formatCalendarSyncMessage(message: string) {
+  const normalized = message.toLowerCase()
+
+  if (
+    normalized.includes('service accounts cannot invite attendees') ||
+    normalized.includes('domain-wide delegation') ||
+    normalized.includes('google calendar rechazo invitados')
+  ) {
+    return 'Google Calendar rechazo invitados. Para este MVP la cita se agenda sin attendees y las notificaciones se envian por correo SMTP.'
+  }
+
+  return message
+}
+
 export function getErrorMessage(error: unknown) {
   if (error instanceof Error) {
     return error.message
   }
 
-  return 'Ocurrió un error inesperado'
+  return 'Ocurrio un error inesperado'
 }

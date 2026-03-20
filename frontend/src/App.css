@@ -1,4 +1,4 @@
-.app-shell {
+﻿.app-shell {
   position: relative;
   min-height: 100vh;
   padding: 1.5rem;
@@ -10,212 +10,381 @@
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at top left, rgba(64, 145, 255, 0.25), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(12, 47, 92, 0.45), transparent 30%),
-    linear-gradient(145deg, #04111f 0%, #0a1c35 45%, #071423 100%);
+    radial-gradient(circle at top left, rgba(81, 207, 178, 0.22), transparent 24%),
+    radial-gradient(circle at top right, rgba(52, 164, 195, 0.12), transparent 22%),
+    linear-gradient(180deg, #f8fffd 0%, #eef8f5 48%, #e7f5f1 100%);
 }
 
-.topbar,
-.hero,
-.section-grid,
-.feature-strip {
-  max-width: 1240px;
+.app-frame {
+  max-width: 1380px;
   margin: 0 auto;
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1rem 1.25rem;
-  background: rgba(6, 14, 26, 0.52);
-  border: 1px solid rgba(148, 184, 226, 0.18);
-  border-radius: 1.4rem;
-  backdrop-filter: blur(18px);
+.surface-card,
+.metric-card,
+.feature-card,
+.ticket-card,
+.notification-card,
+.table-row,
+.appointment-card,
+.booking-notification-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 1.6rem;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
 }
 
-.brand-lockup {
+.app-header,
+.hero-panel,
+.aside-card,
+.booking-form-card,
+.clinician-card,
+.status-card-large,
+.portal-access-card,
+.portal-stage-card,
+.clinician-summary-card,
+.narrative-card,
+.state-card,
+.surface-subsection {
+  padding: 1.5rem;
+}
+
+.app-header,
+.hero-grid,
+.nav-strip,
+.view-stage,
+.page-stack,
+.metric-grid,
+.page-columns,
+.status-grid,
+.feature-grid,
+.stack-grid,
+.doctor-grid,
+.doctor-appointments,
+.portal-form,
+.session-card,
+.report-summary,
+.report-form-card,
+.booking-notification-grid,
+.integration-strip,
+.aside-stack,
+.mini-metric-list,
+.ticket-grid,
+.notification-grid,
+.table-grid,
+.data-section,
+.quick-links {
+  display: grid;
+  gap: 1rem;
+}
+
+.app-header,
+.brand-lockup,
+.header-health-strip,
+.card-topline,
+.meta-pair-grid,
+.ticket-card-header,
+.ticket-card-footer,
+.portal-access-header,
+.appointment-card-header,
+.appointment-meta,
+.doctor-card-top,
+.doctor-card-footer,
+.hero-actions,
+.integration-strip,
+.nav-strip {
   display: flex;
   align-items: center;
   gap: 0.9rem;
 }
 
+.app-header,
+.card-topline,
+.ticket-card-header,
+.ticket-card-footer,
+.portal-access-header,
+.appointment-card-header,
+.appointment-meta,
+.doctor-card-top,
+.doctor-card-footer,
+.meta-pair-grid {
+  justify-content: space-between;
+}
+
 .brand-badge {
   display: inline-grid;
   place-items: center;
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 0.9rem;
-  background: linear-gradient(135deg, #61afff, #1c4b80);
-  color: #f5fbff;
-  font-weight: 700;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--accent), #63ccb6);
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .brand-name,
 .brand-caption,
 .metric-label,
 .metric-description,
-.doctor-card p,
 .feature-card p,
-.section-heading p,
-.hero-description,
-.table-row p,
+.section-copy,
 .ticket-card p,
-.appointment-card p,
-.report-summary p,
-.doctor-highlight p,
-.session-meta,
-.session-role,
-.portal-form label,
-.booking-form label,
+.notification-card p,
+.booking-notification-item p,
 .state-card p,
-.data-section-heading p {
+.session-role,
+.session-meta,
+.aside-copy,
+.subtle-note,
+.nav-pill-caption,
+.ticket-date,
+.doctor-card p,
+.appointment-card p,
+.data-section-heading p,
+.booking-result-title,
+.demo-credentials-title {
   margin: 0;
 }
 
 .brand-name {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 800;
 }
 
-.brand-caption {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.topbar-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.topbar-nav a {
+.brand-caption,
+.section-copy,
+.metric-description,
+.feature-card p,
+.ticket-card p,
+.notification-card p,
+.booking-notification-item p,
+.state-card p,
+.session-role,
+.session-meta,
+.aside-copy,
+.subtle-note,
+.nav-pill-caption,
+.ticket-date,
+.doctor-card p,
+.appointment-card p,
+.data-section-heading p {
   color: var(--text-secondary);
-  font-weight: 600;
+  line-height: 1.6;
 }
 
-.hero {
+.header-health-strip {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-strip {
+  flex-wrap: wrap;
+  margin: 1.1rem 0 1.4rem;
+}
+
+.nav-pill {
+  flex: 1 1 12rem;
+  min-width: 11rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid transparent;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.nav-pill:hover {
+  transform: translateY(-1px);
+  border-color: rgba(29, 157, 139, 0.22);
+}
+
+.nav-pill.is-active {
+  background: linear-gradient(135deg, #f4fffc, #e8fbf6);
+  border-color: rgba(29, 157, 139, 0.26);
+  box-shadow: 0 20px 36px rgba(29, 157, 139, 0.12);
+}
+
+.nav-pill-label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.hero-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 1.5rem;
-  padding: 2rem 0 3rem;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.8fr);
+  gap: 1rem;
+  align-items: stretch;
 }
 
-.eyebrow,
-.panel-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  width: fit-content;
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-.eyebrow {
-  color: #8cc7ff;
-  background: rgba(42, 118, 216, 0.12);
-  border: 1px solid rgba(140, 199, 255, 0.2);
-}
-
-.panel-chip {
-  color: #bfe0ff;
-  background: rgba(21, 73, 139, 0.24);
-}
-
-.panel-chip.muted {
-  color: #d7e9ff;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.hero h1,
-.section-heading h2,
-.spotlight-card h2 {
+.hero-panel h1,
+.narrative-card h2,
+.portal-access-card h2,
+.clinician-summary-card h2 {
   margin: 0;
-  line-height: 1.04;
+  line-height: 1.06;
 }
 
-.hero h1 {
-  margin-top: 1rem;
-  font-size: clamp(2.8rem, 6vw, 4.9rem);
+.hero-panel h1 {
   max-width: 11ch;
+  margin-top: 0.85rem;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
 }
 
 .hero-description {
-  margin-top: 1.2rem;
-  max-width: 63ch;
+  margin: 1rem 0 0;
+  max-width: 58ch;
   color: var(--text-secondary);
   font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.hero-actions,
-.hero-metrics,
-.dashboard-metrics,
-.dashboard-doctor-metrics,
-.feature-strip {
-  display: grid;
-  gap: 1rem;
+  line-height: 1.75;
 }
 
 .hero-actions {
-  grid-template-columns: repeat(2, max-content);
-  margin: 1.8rem 0;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
 }
 
-.button {
+.panel-chip,
+.eyebrow,
+.integration-pill,
+.status-badge {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 3rem;
-  padding: 0.9rem 1.2rem;
+  width: fit-content;
   border-radius: 999px;
-  border: 1px solid transparent;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
 }
 
-.button:hover {
-  transform: translateY(-1px);
+.eyebrow,
+.panel-chip,
+.integration-pill {
+  padding: 0.46rem 0.78rem;
 }
 
-.button-primary {
-  background: linear-gradient(135deg, #67b3ff, #295ea0);
-  color: #f4faff;
-  box-shadow: 0 16px 40px rgba(24, 91, 170, 0.35);
+.eyebrow {
+  color: var(--accent-dark);
+  background: var(--accent-soft);
 }
 
-.button-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-primary);
-  border-color: rgba(176, 207, 245, 0.2);
+.panel-chip {
+  background: rgba(19, 110, 97, 0.08);
+  color: var(--accent-dark);
 }
 
-.hero-metrics,
-.dashboard-metrics {
+.panel-chip-soft {
+  background: rgba(99, 204, 182, 0.16);
+}
+
+.integration-pill.is-ok,
+.status-completed,
+.status-resolved,
+.status-sent {
+  background: rgba(41, 166, 136, 0.14);
+  color: #157360;
+}
+
+.integration-pill.is-warn,
+.status-skipped {
+  background: rgba(222, 171, 72, 0.16);
+  color: #926500;
+}
+
+.status-failed,
+.status-cancelled {
+  background: rgba(207, 96, 96, 0.16);
+  color: #a63c3c;
+}
+
+.status-confirmed,
+.status-open {
+  background: rgba(57, 150, 214, 0.16);
+  color: #1f6e9e;
+}
+
+.status-badge {
+  padding: 0.34rem 0.72rem;
+}
+
+.status-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 999px;
+  background: #7ccfb9;
+}
+
+.status-dot.is-live {
+  box-shadow: 0 0 0 6px rgba(124, 207, 185, 0.14);
+}
+
+.aside-stack,
+.page-stack {
+  align-content: start;
+}
+
+.aside-card h3,
+.narrative-card h2,
+.booking-form-card h2,
+.status-card-large h3,
+.clinician-card h3,
+.doctor-card h3,
+.portal-stage-card h3,
+.ticket-card h4,
+.notification-card h4,
+.appointment-card h4,
+.report-summary h5,
+.data-section-heading h3,
+.state-card h3,
+.clinician-summary-card h2,
+.booking-notification-subject {
+  margin: 0;
+}
+
+.mini-metric-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.glass-card,
-.metric-card,
-.feature-card,
-.appointment-card,
-.ticket-card,
-.table-row {
-  background: rgba(5, 14, 28, 0.68);
-  border: 1px solid rgba(157, 190, 230, 0.16);
-  border-radius: 1.6rem;
-  backdrop-filter: blur(16px);
+.mini-metric-list div {
+  padding: 0.95rem;
+  border-radius: 1rem;
+  background: rgba(19, 110, 97, 0.06);
+}
+
+.mini-metric-list strong {
+  display: block;
+  font-size: 1.55rem;
+}
+
+.mini-metric-list span {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.view-stage {
+  margin-top: 1.4rem;
+}
+
+.page-stack > * + * {
+  margin-top: 0;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metric-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .metric-card {
   padding: 1.2rem;
+  background: var(--bg-surface-strong);
 }
 
 .metric-label {
@@ -225,125 +394,100 @@
 
 .metric-value {
   display: block;
-  margin: 0.4rem 0;
-  font-size: 2rem;
+  margin: 0.45rem 0 0.35rem;
+  font-size: 2.1rem;
+  line-height: 1;
 }
 
-.metric-description {
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-
-.hero-spotlight,
-.doctor-grid,
-.dashboard-stack,
-.doctor-appointments {
-  display: grid;
-  gap: 1rem;
-}
-
-.spotlight-card,
-.doctor-highlight,
-.booking-form,
-.portal-access,
-.portal-content {
-  padding: 1.4rem;
-}
-
-.timeline-list,
-.compact-list {
-  margin: 1rem 0 0;
-  padding-left: 1.2rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.doctor-highlight-header,
-.doctor-card-top,
-.portal-access-header,
-.appointment-card-header,
-.ticket-card-header,
-.ticket-card-footer,
-.doctor-card-footer,
-.doctor-highlight-meta,
-.appointment-meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.8rem;
-}
-
-.availability-dot {
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 999px;
-  background: #76f7b0;
-  box-shadow: 0 0 18px rgba(118, 247, 176, 0.6);
-}
-
-.doctor-highlight-meta,
-.doctor-card-footer,
-.appointment-meta,
-.ticket-card-footer {
-  flex-wrap: wrap;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.section-grid {
-  padding: 2.4rem 0;
-}
-
-.section-heading {
-  max-width: 62rem;
-  margin-bottom: 1.4rem;
-}
-
-.section-heading h2 {
-  margin-top: 0.85rem;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-}
-
-.section-heading p {
-  margin-top: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.booking-layout,
-.portal-layout {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 1rem;
-}
-
-.doctor-grid {
+.page-columns {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-content: start;
+  align-items: start;
 }
 
-.doctor-card,
+.feature-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .feature-card,
-.appointment-card,
+.narrative-card,
+.data-section,
 .ticket-card,
-.table-row {
-  padding: 1.2rem;
+.notification-card,
+.table-row,
+.doctor-card,
+.appointment-card {
+  padding: 1.25rem;
+}
+
+.feature-card {
+  background: linear-gradient(180deg, #ffffff, #f7fcfa);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.86rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--accent), #66cdb8);
+  color: #ffffff;
+  box-shadow: 0 20px 32px rgba(29, 157, 139, 0.22);
+}
+
+.button-secondary {
+  background: #ffffff;
+  color: var(--text-primary);
+  border-color: var(--border-soft);
+}
+
+.button-block {
+  width: 100%;
+}
+.clean-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.compact-list {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.flow-list {
+  line-height: 1.9;
+}
+
+.quick-links {
+  grid-template-columns: repeat(2, max-content);
+  margin-top: 1.2rem;
+}
+
+.card-heading-row,
+.section-intro {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.compact-copy {
+  max-width: 54ch;
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-}
-
-.booking-form textarea,
-.portal-form input,
-.booking-form input,
-.booking-form select,
-.report-form-card textarea,
-.report-form-card input {
-  width: 100%;
-  margin-top: 0.45rem;
 }
 
 label {
@@ -355,24 +499,27 @@ label {
 input,
 textarea,
 select {
-  border: 1px solid rgba(157, 190, 230, 0.22);
+  width: 100%;
+  margin-top: 0.42rem;
+  padding: 0.88rem 0.95rem;
+  border: 1px solid var(--border-soft);
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.94);
   color: var(--text-primary);
-  padding: 0.85rem 0.95rem;
   font: inherit;
   outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: rgba(103, 179, 255, 0.6);
-  box-shadow: 0 0 0 4px rgba(63, 126, 205, 0.14);
+  border-color: rgba(29, 157, 139, 0.44);
+  box-shadow: 0 0 0 4px rgba(29, 157, 139, 0.11);
 }
 
 textarea {
-  min-height: 7.5rem;
+  min-height: 7rem;
   resize: vertical;
 }
 
@@ -380,19 +527,19 @@ textarea {
   margin: 1rem 0 0;
   padding: 0.95rem 1rem;
   border-radius: 1rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .feedback-error {
-  background: rgba(180, 52, 73, 0.16);
-  color: #ffbcc8;
-  border: 1px solid rgba(255, 136, 159, 0.22);
+  background: rgba(207, 96, 96, 0.12);
+  border: 1px solid rgba(207, 96, 96, 0.16);
+  color: #9d3f3f;
 }
 
 .feedback-success {
-  background: rgba(44, 123, 86, 0.16);
-  color: #c4ffe4;
-  border: 1px solid rgba(119, 239, 180, 0.2);
+  background: rgba(41, 166, 136, 0.12);
+  border: 1px solid rgba(41, 166, 136, 0.16);
+  color: #157360;
 }
 
 .booking-result-card {
@@ -400,226 +547,168 @@ textarea {
   gap: 0.9rem;
   margin-top: 1rem;
   padding: 1rem;
-  border-radius: 1.1rem;
-  background: rgba(87, 134, 196, 0.08);
-  border: 1px solid rgba(137, 182, 241, 0.16);
+  border-radius: 1.15rem;
+  background: linear-gradient(180deg, #f8fffd, #eef9f5);
+  border: 1px solid rgba(29, 157, 139, 0.14);
 }
 
-.booking-result-title {
-  margin: 0;
-  font-weight: 700;
+.result-list {
+  padding-left: 1rem;
 }
 
 .booking-notification-grid,
-.integration-status-grid {
-  display: grid;
-  gap: 0.8rem;
-}
-
-.booking-notification-grid {
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-}
-
-.integration-status-grid {
+.status-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .booking-notification-item,
-.integration-status-card {
-  padding: 1rem;
-  border-radius: 1.1rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(157, 190, 230, 0.16);
-}
-
-.booking-notification-item p,
-.integration-status-card p,
-.ticket-date {
-  margin: 0;
-  color: var(--text-secondary);
+.status-card-large,
+.surface-subsection {
+  background: var(--bg-surface-strong);
 }
 
 .booking-notification-subject {
-  font-weight: 700;
   color: var(--text-primary);
+  font-weight: 800;
 }
 
-.integration-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+.stack-grid {
+  align-content: start;
 }
 
-.integration-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.45rem 0.7rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.integration-pill.is-ok {
-  background: rgba(75, 175, 129, 0.18);
-  color: #c9ffe3;
-}
-
-.integration-pill.is-warn {
-  background: rgba(220, 178, 85, 0.16);
-  color: #ffe7a6;
+.doctor-grid-single {
+  grid-template-columns: 1fr;
 }
 
 .text-link,
 .credential-button {
   background: transparent;
   border: none;
-  color: #9ecfff;
+  color: var(--accent-dark);
   cursor: pointer;
   padding: 0;
+  font-weight: 700;
   text-align: left;
 }
 
-.feature-strip {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 1rem auto 2rem;
+.text-link:hover,
+.credential-button:hover {
+  text-decoration: underline;
 }
 
-.feature-card h3,
-.doctor-card h3,
-.appointment-card h4,
-.ticket-card h4,
-.report-summary h5,
-.state-card h3,
-.portal-access h3,
-.dashboard-header h3,
-.table-row h4 {
-  margin: 0 0 0.55rem;
+.data-section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
 }
 
-.portal-content,
-.dashboard-stack {
-  min-height: 30rem;
+.table-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.95fr;
+  gap: 1rem;
 }
 
-.dashboard-stack,
+.ticket-card,
+.notification-card,
+.table-row,
+.appointment-card,
+.doctor-card {
+  background: var(--bg-surface-strong);
+}
+
+.portal-page-grid {
+  grid-template-columns: minmax(19rem, 22rem) minmax(0, 1fr);
+}
+
+.portal-stage-card {
+  min-height: 34rem;
+}
+
 .portal-form,
-.demo-credentials,
 .session-card,
-.data-section,
 .report-summary,
 .report-form-card,
-.state-card {
+.state-card,
+.surface-subsection {
+  align-content: start;
+}
+
+.credential-stack {
   display: grid;
+  gap: 0.75rem;
+}
+
+.session-name {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.clinician-summary-card,
+.report-summary,
+.recommendation-box {
+  background: linear-gradient(180deg, #ffffff, #f5fbf9);
+}
+
+.doctor-appointments {
   gap: 1rem;
-}
-
-.state-card-compact {
-  min-height: auto;
-}
-
-.dashboard-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1rem;
-}
-
-.dashboard-doctor-metrics {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .appointment-reason {
   color: var(--text-secondary);
 }
 
+.report-form-card,
 .recommendation-box {
   padding: 1rem;
-  border-radius: 1rem;
-  background: rgba(81, 136, 210, 0.08);
-  border: 1px solid rgba(124, 174, 240, 0.16);
+  border-radius: 1.1rem;
+  border: 1px solid rgba(29, 157, 139, 0.12);
 }
 
 .recommendation-title,
 .demo-credentials-title {
-  margin: 0;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-.data-section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+.state-card,
+.state-card-compact {
+  background: linear-gradient(180deg, #ffffff, #f7fcfa);
 }
 
-.table-grid,
-.ticket-grid,
-.notification-grid {
-  display: grid;
-  gap: 0.8rem;
+.ticket-date,
+.meta-pair-grid,
+.appointment-meta,
+.doctor-card-footer {
+  flex-wrap: wrap;
 }
 
-.notification-card {
-  padding: 1.2rem;
-  background: rgba(5, 14, 28, 0.68);
-  border: 1px solid rgba(157, 190, 230, 0.16);
-  border-radius: 1.6rem;
-  backdrop-filter: blur(16px);
+.notification-card,
+.ticket-card,
+.table-row,
+.appointment-card {
+  border-radius: 1.4rem;
 }
 
-.table-row {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr 0.95fr;
-  gap: 1rem;
+.status-grid,
+.overview-columns {
+  align-items: start;
 }
 
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 0.7rem;
-  padding: 0.32rem 0.65rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.status-confirmed,
-.status-open {
-  background: rgba(84, 149, 245, 0.18);
-  color: #cbe1ff;
-}
-
-.status-completed,
-.status-resolved,
-.status-sent {
-  background: rgba(75, 175, 129, 0.18);
-  color: #c9ffe3;
-}
-
-.status-skipped {
-  background: rgba(220, 178, 85, 0.16);
-  color: #ffe7a6;
-}
-
-.status-failed,
-.status-cancelled {
-  background: rgba(198, 74, 97, 0.18);
-  color: #ffc2cc;
-}
-
-@media (max-width: 1100px) {
-  .hero,
-  .booking-layout,
-  .portal-layout,
-  .dashboard-header {
+@media (max-width: 1180px) {
+  .hero-grid,
+  .booking-page-grid,
+  .overview-columns,
+  .portal-page-grid,
+  .two-up,
+  .status-grid {
     grid-template-columns: 1fr;
   }
 
-  .feature-strip,
-  .hero-metrics,
-  .dashboard-metrics,
-  .dashboard-doctor-metrics,
-  .doctor-grid,
-  .integration-status-grid {
+  .feature-grid,
+  .metric-grid,
+  .metric-grid-three,
+  .booking-notification-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -633,30 +722,65 @@ textarea {
     padding: 1rem;
   }
 
-  .topbar,
+  .app-header,
+  .header-health-strip,
   .hero-actions,
-  .doctor-highlight-header,
-  .doctor-card-top,
   .portal-access-header,
-  .appointment-card-header {
+  .appointment-card-header,
+  .doctor-card-top,
+  .ticket-card-header,
+  .ticket-card-footer,
+  .appointment-meta,
+  .doctor-card-footer,
+  .meta-pair-grid,
+  .card-topline,
+  .data-section-heading {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .topbar-nav,
-  .hero-actions,
-  .feature-strip,
-  .hero-metrics,
-  .dashboard-metrics,
-  .dashboard-doctor-metrics,
-  .doctor-grid,
+  .nav-pill,
+  .feature-grid,
+  .metric-grid,
+  .metric-grid-three,
+  .booking-notification-grid,
+  .status-grid,
   .form-grid,
-  .integration-status-grid {
+  .quick-links,
+  .mini-metric-list {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
+  .hero-panel h1 {
     max-width: 100%;
-    font-size: 2.65rem;
+    font-size: 2.5rem;
+  }
+
+  .surface-card,
+  .metric-card,
+  .feature-card,
+  .ticket-card,
+  .notification-card,
+  .table-row,
+  .appointment-card,
+  .booking-notification-item {
+    border-radius: 1.25rem;
   }
 }
+
+.hero-panel,
+.aside-card,
+.narrative-card,
+.booking-form-card,
+.clinician-card,
+.status-card-large,
+.portal-access-card,
+.portal-stage-card,
+.clinician-summary-card,
+.doctor-card {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+

@@ -9,4 +9,4 @@ Thumbs.db
 desktop.ini
 .m2repo/
 *.log
-target/
+target/*.docx 

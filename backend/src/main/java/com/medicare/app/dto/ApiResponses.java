@@ -119,6 +119,22 @@ public final class ApiResponses {
             List<NotificationLogResponse> recentNotifications) {
     }
 
+    public record CalendarDebugResponse(
+            boolean enabled,
+            String calendarId,
+            String serviceAccountEmail,
+            String jsonPath,
+            String timeZone,
+            boolean created,
+            String eventId,
+            String htmlLink,
+            String message,
+            String summary,
+            LocalDateTime start,
+            LocalDateTime end,
+            String attendeeEmail) {
+    }
+
     public record AuthMeResponse(
             String email,
             String displayName,

@@ -32,7 +32,8 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/public/**", "/h2-console/**").permitAll()
-                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/debug/**").hasRole("ADMIN")
                         .requestMatchers("/api/doctor/**").hasRole("DOCTOR")
                         .requestMatchers("/api/auth/me").authenticated()
                         .anyRequest().permitAll())
@@ -61,3 +62,5 @@ public class SecurityConfig {
         return source;
     }
 }
+
+

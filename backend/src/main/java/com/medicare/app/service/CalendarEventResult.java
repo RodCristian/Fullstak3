@@ -4,9 +4,11 @@ public record CalendarEventResult(
         boolean created,
         String eventId,
         String htmlLink,
-        String message) {
+        String message,
+        String calendarId,
+        String serviceAccountEmail) {
 
-    public static CalendarEventResult skipped(String message) {
-        return new CalendarEventResult(false, null, null, message);
+    public static CalendarEventResult skipped(String message, String calendarId, String serviceAccountEmail) {
+        return new CalendarEventResult(false, null, null, message, calendarId, serviceAccountEmail);
     }
 }

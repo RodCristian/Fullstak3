@@ -26,19 +26,19 @@ public class SeedDataConfig {
         return args -> {
             if (doctorRepository.count() == 0) {
                 doctorRepository.saveAll(List.of(
-                        doctor("Dra. Valentina Rojas", "valentina.rojas@navycare.local", "Medicina General",
+                        doctor("Dra. Valentina Rojas", "criswido0+valentina@gmail.com", "Medicina General",
                                 "Enfoque preventivo y seguimiento integral para pacientes adultos.",
                                 "Consulta 201"),
-                        doctor("Dr. Tomas Fuentes", "tomas.fuentes@navycare.local", "Cardiologia",
+                        doctor("Dr. Tomas Fuentes", "criswido0+tomas@gmail.com", "Cardiologia",
                                 "Especialista en evaluacion cardiovascular y control de presion arterial.",
                                 "Consulta 305"),
-                        doctor("Dra. Camila Soto", "camila.soto@navycare.local", "Dermatologia",
+                        doctor("Dra. Camila Soto", "criswido0+camila@gmail.com", "Dermatologia",
                                 "Tratamiento y seguimiento de patologias cutaneas frecuentes.",
                                 "Consulta 118"),
-                        doctor("Dr. Diego Araya", "diego.araya@navycare.local", "Traumatologia",
+                        doctor("Dr. Diego Araya", "criswido0+diego@gmail.com", "Traumatologia",
                                 "Atencion enfocada en lesiones musculoesqueleticas y rehabilitacion.",
                                 "Consulta 410"),
-                        doctor("Dra. Sofia Mendez", "sofia.mendez@navycare.local", "Neurologia",
+                        doctor("Dra. Sofia Mendez", "criswido0+sofia@gmail.com", "Neurologia",
                                 "Manejo inicial y derivacion de sintomas neurologicos y cefaleas complejas.",
                                 "Consulta 512")));
             }
